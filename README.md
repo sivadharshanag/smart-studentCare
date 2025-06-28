@@ -46,35 +46,7 @@
 - 📄 MongoDB GridFS file storage
 - 📱 Responsive and modern UI with TailwindCSS
 
----
 
-## 🗂 Folder Structure
-smart-studentCare/
-├── client/ # React Frontend
-│ ├── src/pages/ # Upload, Retrieve, Resume
-│ ├── src/components/
-│ ├── App.jsx
-│ └── ...
-│
-├── server/ # Node.js Backend
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-│ ├── server.js
-│ └── .env
-│
-├── ml-models/ # Python ML Microservices
-│ ├── summarizer.py
-│ ├── resume_analysis.py
-│ ├── requirements.txt
-│ └── ...
-│
-├── .gitignore
-└── README.md
-
-
-
----
 
 ## ⚙️ Installation & Setup Guide
 
