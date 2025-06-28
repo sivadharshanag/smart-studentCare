@@ -72,9 +72,6 @@ smart-studentCare/
 ├── .gitignore
 └── README.md
 
-yaml
-Copy
-Edit
 
 
 ---
