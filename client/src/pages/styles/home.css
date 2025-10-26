@@ -1,0 +1,304 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@600;700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Color variables */
+:root {
+  --circle-teal-primary: #a3a2e3;
+  --circle-teal-dark: #97a9ad;
+  --circle-teal-darker: #155e75;
+  --circle-teal-light: #bed9dc;
+  --circle-orange: #f9b98c;
+  --circle-orange-dark: #ea580c;
+  --circle-cream: #fef7ed;
+  --circle-cream-dark: #fef3e2;
+  --circle-pink: #f472b6;
+  --circle-blue: #e8d3d6;
+  --circle-purple: #a855f7;
+  --gray-900: #111827;
+  --gray-600: #4b5563;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --white: #ffffff;
+}
+
+/* Main container */
+.home-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Background video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 4px 32px rgba(163,162,227,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+  max-width: 98vw;
+  margin: 0 auto 32px auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  justify-content: flex-start;
+}
+
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #19332d;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-right: 48px;
+  margin-left: 0;
+  justify-content: flex-start;
+}
+
+.logo-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--circle-teal-primary);
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  margin: 0;
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  /* Add a subtle text-shadow for pop */
+  text-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 1.2px;
+  color: #111 !important; /* Always black by default */
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  padding: 0 8px 2px 8px;
+  border-radius: 0;
+  border-bottom: 2.5px solid transparent;
+  outline: none;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  color: #a855f7 !important; /* Violet on hover/focus */
+  background: none;
+}
+
+/* Only make nav-item.active violet if not ABOUT (first nav item) */
+.nav-item.active {
+  color: #a855f7 !important;
+  background: none;
+  text-shadow: 0 2px 12px rgba(168,85,247,0.10);
+}
+
+.nav-item.active:first-child {
+  color: #111 !important;
+  text-shadow: none;
+}
+
+/* Remove special case: ABOUT active should stay black */
+/* .nav-item.active:first-child {
+  color: #111 !important;
+  text-shadow: none;
+} */
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 10px;
+    padding: 6px 6px;
+    font-size: 0.95rem;
+  }
+
+  .nav-item {
+    padding: 7px 10px;
+    font-size: 0.95em;
+  }
+}
+
+/* Header right */
+.header-right {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.search-icon:hover {
+  color: var(--circle-teal-primary);
+}
+
+.get-started-btn, .sign-in-btn {
+  background: #368688;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(54,134,136,0.10);
+}
+
+.get-started-btn:hover, .sign-in-btn:hover {
+  background: #25696a;
+}
+
+/* Shared section styles */
+.section-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--gray-900);
+  margin-bottom: 64px;
+}
+
+.section-title.white {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 48px;
+  }
+
+  .section-content {
+    padding: 0 16px;
+  }
+}
+
+/* Ensure all main content is above the video */
+.header, .header-content, .header-inner, .logo, .nav, .header-right, .sign-in-btn, .section-content, .section-title {
+  position: relative;
+  z-index: 2;
+}
+
+/* About section with video */
+.about-section-with-video {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none !important; /* Remove any gradient or color background */
+}
+
+.about-section-with-video .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.about-section-with-video > *:not(.background-video) {
+  position: relative;
+  z-index: 1;
+}
+
+.about-section-with-video,
+.about-section-with-video * {
+  background: none !important;
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplified Resume Parser Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-input {
+            width: 100%;
+            height: 200px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .result {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .sample-resume {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Simplified Resume Parser Test</h1>
+    <p><strong>New Approach:</strong> Extract all text content in one page and separate links</p>
+    
+    <div class="test-section">
+        <h3>Sample Resume 1: Software Engineer</h3>
+        <div class="sample-resume">
+John Doe
+Software Engineer
+john.doe@email.com
++1 (555) 123-4567
+San Francisco, CA
+https://linkedin.com/in/johndoe
+https://github.com/johndoe
+https://leetcode.com/johndoe
+
+PROFESSIONAL SUMMARY
+Experienced software engineer with 5+ years in full-stack development, specializing in React, Node.js, and cloud technologies. Passionate about creating scalable solutions and mentoring junior developers.
+
+EDUCATION
+Bachelor of Science in Computer Science
+Stanford University
+2020
+GPA: 3.8
+
+EXPERIENCE
+Senior Software Engineer
+Tech Corp Inc.
+Jan 2022 - Present
+San Francisco, CA
+- Led development of microservices architecture
+- Mentored 3 junior developers
+- Improved system performance by 40%
+
+Software Engineer
+StartupXYZ
+Jun 2020 - Dec 2021
+San Francisco, CA
+- Built RESTful APIs using Node.js
+- Implemented CI/CD pipelines
+
+TECHNICAL SKILLS
+Programming Languages: JavaScript, Python, Java, Go
+Frontend: React, Vue.js, HTML5, CSS3, TypeScript
+Backend: Node.js, Express, Django, Spring Boot
+Databases: MongoDB, PostgreSQL, Redis
+Cloud: AWS, Docker, Kubernetes, Terraform
+
+PROJECTS
+E-commerce Platform
+Built a full-stack e-commerce solution using React and Node.js
+Technologies: React, Node.js, MongoDB, Stripe API
+
+Task Management App
+Developed a collaborative task management application
+Technologies: Vue.js, Firebase, PWA features
+
+CERTIFICATIONS
+AWS Certified Solutions Architect
+Google Cloud Professional Developer
+        </div>
+        <button class="test-button" onclick="testResume1()">Test Resume 1</button>
+    </div>
+
+    <div class="test-section">
+        <h3>Sample Resume 2: Data Scientist</h3>
+        <div class="sample-resume">
+Jane Smith
+Data Scientist
+jane.smith@email.com
++1 (555) 987-6543
+New York, NY
+https://linkedin.com/in/janesmith
+https://github.com/janesmith
+https://leetcode.com/janesmith
+
+SUMMARY
+Data scientist with expertise in machine learning, statistical analysis, and big data processing. Proven track record of delivering insights that drive business decisions.
+
+EDUCATION
+Master of Science in Data Science
+MIT
+2021
+GPA: 3.9
+
+Bachelor of Science in Mathematics
+Harvard University
+2019
+GPA: 3.7
+
+EXPERIENCE
+Data Scientist
+Analytics Corp
+Mar 2021 - Present
+New York, NY
+- Developed ML models for customer segmentation
+- Analyzed large datasets using Python and R
+- Created data visualization dashboards
+
+Data Analyst Intern
+DataTech
+Jun 2020 - Aug 2020
+Boston, MA
+- Performed exploratory data analysis
+- Created automated reporting systems
+
+SKILLS
+Programming: Python, R, SQL, Scala
+ML/AI: TensorFlow, PyTorch, Scikit-learn, Keras
+Big Data: Spark, Hadoop, Kafka
+Visualization: Tableau, Power BI, D3.js
+Statistics: Hypothesis testing, A/B testing, Regression analysis
+
+PROJECTS
+Customer Churn Prediction
+Built ML model to predict customer churn with 85% accuracy
+Technologies: Python, Scikit-learn, Pandas, NumPy
+
+Real-time Analytics Dashboard
+Created real-time dashboard for monitoring business metrics
+Technologies: React, Python, Kafka, Redis
+        </div>
+        <button class="test-button" onclick="testResume2()">Test Resume 2</button>
+    </div>
+
+    <div class="test-section">
+        <h3>Custom Resume Test</h3>
+        <textarea id="customResume" class="test-input" placeholder="Paste your resume text here..."></textarea>
+        <button class="test-button" onclick="testCustomResume()">Test Custom Resume</button>
+    </div>
+
+    <div class="test-section">
+        <h3>Test Results</h3>
+        <div id="results" class="result">Click a test button above to see results...</div>
+    </div>
+
+    <script type="module">
+        // Import the simplified parser function
+        import('./src/utils/resumeParser.js').then(module => {
+            window.parseResumeText = module.parseResumeText;
+        }).catch(err => {
+            console.error('Failed to load parser:', err);
+            document.getElementById('results').textContent = 'Error: Could not load resume parser. Make sure you are running this from the React app.';
+        });
+
+        // Test functions
+        window.testResume1 = function() {
+            const resumeText = `John Doe
+Software Engineer
+john.doe@email.com
++1 (555) 123-4567
+San Francisco, CA
+https://linkedin.com/in/johndoe
+https://github.com/johndoe
+https://leetcode.com/johndoe
+
+PROFESSIONAL SUMMARY
+Experienced software engineer with 5+ years in full-stack development, specializing in React, Node.js, and cloud technologies. Passionate about creating scalable solutions and mentoring junior developers.
+
+EDUCATION
+Bachelor of Science in Computer Science
+Stanford University
+2020
+GPA: 3.8
+
+EXPERIENCE
+Senior Software Engineer
+Tech Corp Inc.
+Jan 2022 - Present
+San Francisco, CA
+- Led development of microservices architecture
+- Mentored 3 junior developers
+- Improved system performance by 40%
+
+Software Engineer
+StartupXYZ
+Jun 2020 - Dec 2021
+San Francisco, CA
+- Built RESTful APIs using Node.js
+- Implemented CI/CD pipelines
+
+TECHNICAL SKILLS
+Programming Languages: JavaScript, Python, Java, Go
+Frontend: React, Vue.js, HTML5, CSS3, TypeScript
+Backend: Node.js, Express, Django, Spring Boot
+Databases: MongoDB, PostgreSQL, Redis
+Cloud: AWS, Docker, Kubernetes, Terraform
+
+PROJECTS
+E-commerce Platform
+Built a full-stack e-commerce solution using React and Node.js
+Technologies: React, Node.js, MongoDB, Stripe API
+
+Task Management App
+Developed a collaborative task management application
+Technologies: Vue.js, Firebase, PWA features
+
+CERTIFICATIONS
+AWS Certified Solutions Architect
+Google Cloud Professional Developer`;
+
+            if (window.parseResumeText) {
+                const result = window.parseResumeText(resumeText);
+                displayResults('Resume 1 Test Results', result);
+            } else {
+                document.getElementById('results').textContent = 'Parser not loaded yet. Please wait...';
+            }
+        };
+
+        window.testResume2 = function() {
+            const resumeText = `Jane Smith
+Data Scientist
+jane.smith@email.com
++1 (555) 987-6543
+New York, NY
+https://linkedin.com/in/janesmith
+https://github.com/janesmith
+https://leetcode.com/janesmith
+
+SUMMARY
+Data scientist with expertise in machine learning, statistical analysis, and big data processing. Proven track record of delivering insights that drive business decisions.
+
+EDUCATION
+Master of Science in Data Science
+MIT
+2021
+GPA: 3.9
+
+Bachelor of Science in Mathematics
+Harvard University
+2019
+GPA: 3.7
+
+EXPERIENCE
+Data Scientist
+Analytics Corp
+Mar 2021 - Present
+New York, NY
+- Developed ML models for customer segmentation
+- Analyzed large datasets using Python and R
+- Created data visualization dashboards
+
+Data Analyst Intern
+DataTech
+Jun 2020 - Aug 2020
+Boston, MA
+- Performed exploratory data analysis
+- Created automated reporting systems
+
+SKILLS
+Programming: Python, R, SQL, Scala
+ML/AI: TensorFlow, PyTorch, Scikit-learn, Keras
+Big Data: Spark, Hadoop, Kafka
+Visualization: Tableau, Power BI, D3.js
+Statistics: Hypothesis testing, A/B testing, Regression analysis
+
+PROJECTS
+Customer Churn Prediction
+Built ML model to predict customer churn with 85% accuracy
+Technologies: Python, Scikit-learn, Pandas, NumPy
+
+Real-time Analytics Dashboard
+Created real-time dashboard for monitoring business metrics
+Technologies: React, Python, Kafka, Redis`;
+
+            if (window.parseResumeText) {
+                const result = window.parseResumeText(resumeText);
+                displayResults('Resume 2 Test Results', result);
+            } else {
+                document.getElementById('results').textContent = 'Parser not loaded yet. Please wait...';
+            }
+        };
+
+        window.testCustomResume = function() {
+            const resumeText = document.getElementById('customResume').value;
+            if (!resumeText.trim()) {
+                document.getElementById('results').textContent = 'Please enter some resume text first.';
+                return;
+            }
+
+            if (window.parseResumeText) {
+                const result = window.parseResumeText(resumeText);
+                displayResults('Custom Resume Test Results', result);
+            } else {
+                document.getElementById('results').textContent = 'Parser not loaded yet. Please wait...';
+            }
+        };
+
+        function displayResults(title, result) {
+            const resultsDiv = document.getElementById('results');
+            let output = `${title}\n`;
+            output += '='.repeat(title.length) + '\n\n';
+            
+            // Basic Info
+            output += '👤 BASIC INFORMATION:\n';
+            output += `Name: ${result.name || 'Not found'}\n`;
+            output += `Email: ${result.email || 'Not found'}\n`;
+            output += `Phone: ${result.phone || 'Not found'}\n\n`;
+            
+            // Links
+            output += '🔗 PROFESSIONAL LINKS:\n';
+            output += `LinkedIn: ${result.linkedin || 'Not found'}\n`;
+            output += `GitHub: ${result.github || 'Not found'}\n`;
+            output += `LeetCode: ${result.leetcode || 'Not found'}\n`;
+            output += `Portfolio: ${result.portfolio || 'Not found'}\n\n`;
+            
+            // Full Text (first 500 characters)
+            output += '📄 FULL RESUME TEXT (First 500 chars):\n';
+            const textPreview = result.fullText.length > 500 
+              ? result.fullText.substring(0, 500) + '...' 
+              : result.fullText;
+            output += textPreview + '\n\n';
+            
+            // Text Statistics
+            output += '📊 TEXT STATISTICS:\n';
+            output += `Total characters: ${result.fullText.length}\n`;
+            output += `Total lines: ${result.fullText.split('\n').length}\n`;
+            output += `Words: ${result.fullText.split(/\s+/).filter(word => word.length > 0).length}\n`;
+            
+            resultsDiv.textContent = output;
+        }
+    </script>
+</body>
+</html> 

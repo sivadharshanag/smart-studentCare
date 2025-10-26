@@ -1,0 +1,57 @@
+.ap-wrapper { margin-top: 16px; }
+.ap-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
+.ap-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); overflow: hidden; }
+.ap-card-header { padding: 12px 16px; font-weight: 700; border-bottom: 1px solid #f1f5f9; background: linear-gradient(90deg,#f8fafc,#f1f5f9); }
+.ap-video-wrap { position: relative; width: 100%; height: 360px; background: #0f172a; }
+.ap-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); opacity: 0.9; }
+.ap-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.ap-posture-pill { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; margin: 12px; border-radius: 999px; font-weight: 600; }
+.ap-posture-pill[data-state="excellent"] { background: #ecfdf5; color: #065f46; }
+.ap-posture-pill[data-state="good"] { background: #eff6ff; color: #1e40af; }
+.ap-posture-pill[data-state="slouching"] { background: #fffbeb; color: #92400e; }
+.ap-posture-pill[data-state="tilted"] { background: #fef2f2; color: #991b1b; }
+.ap-posture-pill[data-state="neutral"] { background: #f1f5f9; color: #64748b; }
+
+.ap-emotion-display { padding: 16px; text-align: center; }
+.ap-emotion-icon { font-size: 48px; margin-bottom: 8px; }
+.ap-emotion-label { font-weight: 600; font-size: 14px; }
+.ap-debug-toggle { background: none; border: none; cursor: pointer; font-size: 16px; margin-left: 8px; opacity: 0.7; }
+.ap-debug-toggle:hover { opacity: 1; }
+.ap-debug-info { margin-top: 12px; padding: 8px; background: #f1f5f9; border-radius: 6px; font-size: 12px; text-align: left; }
+.ap-debug-info div { margin: 2px 0; }
+.ap-debug-controls { display: flex; gap: 8px; margin-top: 8px; }
+.ap-test-emotion-btn { padding: 4px 8px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; }
+.ap-test-emotion-btn:hover { background: #2563eb; }
+.ap-calibrate-btn { padding: 4px 8px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; }
+.ap-calibrate-btn:hover { background: #059669; }
+.ap-calibration-info { margin-top: 8px; padding: 6px; background: #ecfdf5; border-radius: 4px; font-size: 11px; }
+.ap-calibration-info div { margin: 1px 0; }
+.ap-emotion-label[data-emotion="happy"] { color: #059669; }
+.ap-emotion-label[data-emotion="neutral"] { color: #6b7280; }
+.ap-emotion-label[data-emotion="serious"] { color: #374151; }
+.ap-emotion-label[data-emotion="tired"] { color: #7c3aed; }
+.ap-emotion-label[data-emotion="surprised"] { color: #dc2626; }
+.ap-emotion-label[data-emotion="concerned"] { color: #ea580c; }
+.ap-emotion-label[data-emotion="speaking"] { color: #2563eb; }
+.ap-emotion-label[data-emotion="focused"] { color: #7c3aed; }
+.ap-emotion-label[data-emotion="confident"] { color: #059669; }
+.ap-emotion-label[data-emotion="engaged"] { color: #0891b2; }
+.ap-emotion-label[data-emotion="thoughtful"] { color: #be185d; }
+
+.ap-sentiment-meter { padding: 16px; }
+.ap-meter-track { width: 100%; height: 10px; background: #e5e7eb; border-radius: 999px; overflow: hidden; }
+.ap-meter-fill { height: 100%; background: linear-gradient(90deg,#22c55e,#3b82f6); border-radius: 999px; }
+.ap-sentiment-label { margin-top: 8px; font-weight: 600; }
+.ap-keywords { padding: 0 16px 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.ap-chip { padding: 6px 10px; border-radius: 999px; background: #f1f5f9; border: 1px solid #e2e8f0; font-size: 12px; }
+.ap-error { padding: 16px; border: 1px solid #fecaca; background: #fef2f2; border-radius: 12px; color: #991b1b; display: flex; gap: 12px; align-items: flex-start; }
+.ap-error-icon { font-size: 18px; margin-top: 2px; }
+.ap-error-content { flex: 1; }
+.ap-error-message { margin-bottom: 12px; line-height: 1.4; }
+.ap-retry-btn { padding: 8px 16px; background: #dc2626; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 500; transition: background-color 0.2s; }
+.ap-retry-btn:hover { background: #b91c1c; }
+.ap-retry-btn:active { transform: translateY(1px); }
+@media (max-width: 1200px) { .ap-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) { .ap-grid { grid-template-columns: 1fr; } .ap-video-wrap { height: 260px; } }
+
+

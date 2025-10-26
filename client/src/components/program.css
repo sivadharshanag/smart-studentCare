@@ -1,0 +1,215 @@
+:root {
+  --circle-cream: #cdc9b0;
+  --circle-cream-dark: #a89e80;
+  --circle-teal-primary: #6308b2;
+  --white: #ffffff;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-600: #4b5563;
+  --gray-900: #111827;
+}
+
+/* Program Section */
+.upload-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg,  #e1eaeb 23%, #c7c0ac 100%, #e0ded8 10%);
+  font-family: Arial, sans-serif;
+}
+
+/* Grid-style layout similar to syllabus */
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .upload-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .upload-section {
+    padding: 60px 20px;
+  }
+}
+
+/* Upload Form Card */
+.upload-form {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Styles */
+.upload-form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gray-900);
+}
+
+.upload-form input,
+.upload-form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--gray-200);
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.upload-form input:focus,
+.upload-form select:focus {
+  border-color: var(--circle-teal-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+}
+
+/* Button */
+.upload-form button {
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--circle-teal-primary);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.upload-form button:hover {
+  background: #056b8a;
+}
+
+/* Message */
+.upload-message {
+  font-weight: bold;
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Syllabus Illustration Card */
+.syllabus-illustration {
+  position: relative;
+}
+
+.illustration-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--circle-teal-primary);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.avatar-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-info {
+  flex-grow: 1;
+}
+
+.info-line.long {
+  width: 100%;
+  height: 10px;
+  background: var(--gray-200);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.info-line.short {
+  width: 60%;
+  height: 10px;
+  background: var(--gray-200);
+  border-radius: 5px;
+}
+
+.card-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--circle-teal-primary);
+  border-radius: 50%;
+}
+
+.card-chart {
+  width: 100%;
+  height: 50px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.syllabus-content {
+  margin-top: 20px;
+}
+
+.syllabus-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.item-number {
+  width: 30px;
+  height: 30px;
+  background: var(--circle-teal-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.item-content {
+  flex-grow: 1;
+}
+
+.item-title {
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 5px;
+}
+
+.item-description {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+.illustration-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}

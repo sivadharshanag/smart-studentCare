@@ -1,0 +1,155 @@
+/* Dashboard.css */
+
+.dashboard-wrapper {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f9f6;
+  padding: 2rem;
+  color: #1f3d2e;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.dash-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  animation: slideInUp 0.7s ease;
+}
+
+.hero-text {
+  max-width: 60%;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  color: #2f6846;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #496d56;
+}
+
+.dash-gif img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nav-btn {
+  background-color: #2f6846;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #244e37;
+}
+
+.summary-section {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease;
+}
+
+.summary-card {
+  background: #ffffff;
+  flex: 1;
+  padding: 1.5rem;
+  border-left: 6px solid #2f6846;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  animation: slideInLeft 0.7s ease-in-out;
+}
+
+.summary-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #265c43;
+}
+
+.summary-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.graph-section {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: slideInUp 0.7s ease;
+}
+
+.calendar-section {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.react-calendar {
+  border: none;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.react-calendar__tile.highlight {
+  background: #2f6846 !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
